@@ -1,0 +1,83 @@
+﻿<Window x:Class="Tafeltester2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tafeltester2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/rekenen.png"/>
+        </Grid.Background>
+
+        <Grid x:Name="Stap1"  Margin="186,10,188.6,96"  >
+
+            <TextBox x:Name="MainTextBox"
+                     Margin="-170,267,329,0" FontSize="20" TextAlignment="Center" BorderThickness="3,3,3,3" BorderBrush="#FF7B07D9" SelectionBrush="#FFED0C0C" FontFamily="Bookman Old Style"/>
+
+            <Button x:Name="NameInputButton"
+                    Content="Wat is jou naam" 
+                    Margin="-170,328,329,-61"
+                    Click="NameInputButton_Click" FontSize="20" FontFamily="Bookman Old Style"/>
+        </Grid>
+
+        <Grid x:Name="Stap2" Visibility="Hidden" HorizontalAlignment="Left" Height="114" Margin="-14,-13,0,0" VerticalAlignment="Top" Width="299">
+            <Label x:Name="LabelName" 
+                   Content="" 
+                   FontWeight="Bold" 
+                   Margin="44,30,34,37" FontSize="26" Foreground="Black" FontFamily="Bookman Old Style"/>
+        </Grid>
+
+        <Grid x:Name="Test" Visibility="Hidden" HorizontalAlignment="Left" Height="236" Margin="136,10,0,0" VerticalAlignment="Top" Width="504">
+            <Label x:Name="LabelVragen"
+                   Content="" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Margin="195,32,0,0" 
+                   Width="118"
+                   Height="43" FontWeight="Bold" FontSize="20"
+                    />
+
+            <TextBox x:Name="Antwoord"
+                     HorizontalAlignment="Center" 
+                     Height="55" 
+                     TextWrapping="Wrap"
+                     Text="" 
+                     VerticalAlignment="Top"
+                     Width="196" 
+                     Margin="0,80,0,0" FontSize="20"/>
+
+            <Button Content="Volgende"
+                    Click="ButtonNext_Click"
+                    HorizontalAlignment="Left" 
+                    Height="55" 
+                    Margin="355,80,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="119" FontSize="20" BorderBrush="#FFA41919" Background="#FF73C600" FontFamily="Bookman Old Style"/>
+
+            <Label x:Name="JuisteAntwoord"
+                   Content="" 
+                   HorizontalAlignment="Left"
+                   Height="54"
+                   Margin="126,135,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="490" FontSize="16" Foreground="Black"/>
+        </Grid>
+        <Grid Margin="34,36,34,36">
+            <Label x:Name="ScorePlayer" Visibility="Hidden"
+                   Content="Score" 
+                   HorizontalAlignment="Left" 
+                   Height="66" 
+                   Margin="-26,296,0,0" 
+                   VerticalAlignment="Top" 
+                   Width="702"
+                   FontSize="30" Foreground="Black"/>
+            <Grid x:Name="LevelKeuze" Margin="199,248,174,38" Visibility="Hidden">
+                <Button x:Name="ButtonEasy" Content="Makkelijk" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="10,2,0,0" Click="Easy_Click" Height="56" Background="#FFFDDF00" FontSize="20"/>
+                <Button x:Name="ButtonMedium" Content="Gemiddeld" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="121,2,0,0" Click="Medium_Click" Height="56" FontSize="20" Background="#FFAD42A5"/>
+                <Button x:Name="ButtonHard" Content="Moeilijk" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="232,2,0,0" Click="Hard_Click" Height="56" FontSize="20" Background="Red"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
